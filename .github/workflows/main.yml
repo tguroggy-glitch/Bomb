@@ -1,20 +1,20 @@
-name: Run bomb.py
+name: Run Python Script
 
 on:
   workflow_dispatch:
 
 jobs:
-  run:
+  run-python:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Run script
+      - name: Run bomb.py
         run: python bomb.py
